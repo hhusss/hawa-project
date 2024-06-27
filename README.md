@@ -1,4 +1,4 @@
-Rate A Spot Website
+        Rate A Spot Website
 <!DOCTYPE html>
 <html>
 <head>
