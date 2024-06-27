@@ -57,3 +57,126 @@
     <script src="script.js"></script>
 </body>
 </html>
+document.getElementById('locationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+ 
+    const name = document.getElementById('name').value;
+    const rating = document.getElementById('rating').value;
+    const review = document.getElementById('review').value;
+    const image = document.getElementById('image').value;
+
+    
+    const locationCard = document.createElement('div');
+    locationCard.className = 'location-card';
+
+    locationCard.innerHTML = `
+        <img src="${image}" alt="${name}">
+        <h3>${name}</h3>
+        <p>Rating: ${rating}</p>
+        <p>${review}</p>
+    `;
+
+    
+    const locationsContainer = document.getElementById('locationsContainer');
+    locationsContainer.appendChild(locationCard);
+
+    
+    document.getElementById('locationForm').reset();
+});
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Alice Blue */
+}
+
+header {
+    background-color: #1e90ff; /* Dodger Blue */
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+#form-section, #locations-section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 1em;
+    padding: 1em;
+    width: 45%;
+}
+
+h2 {
+    color: #1e90ff; /* Dodger Blue */
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #1e90ff; /* Dodger Blue */
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1565c0; /* Darker shade of Dodger Blue */
+}
+
+.locations-container {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.location-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1em;
+    width: calc(45% - 1em);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.location-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.location-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.location-card p {
+    margin: 0.5em 0 0;
+}
